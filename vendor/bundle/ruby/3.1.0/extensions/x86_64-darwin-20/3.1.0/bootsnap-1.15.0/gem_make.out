@@ -1,0 +1,15 @@
+current directory: /Users/Atsushi_Hasunuma/projects/rails-hotel-search-line-bot/vendor/bundle/ruby/3.1.0/gems/bootsnap-1.15.0/ext/bootsnap
+/Users/Atsushi_Hasunuma/.rbenv/versions/3.1.2/bin/ruby -I /Users/Atsushi_Hasunuma/.rbenv/versions/3.1.2/lib/ruby/3.1.0 -r ./siteconf20221223-21475-pxigk7.rb extconf.rb
+creating Makefile
+
+current directory: /Users/Atsushi_Hasunuma/projects/rails-hotel-search-line-bot/vendor/bundle/ruby/3.1.0/gems/bootsnap-1.15.0/ext/bootsnap
+make DESTDIR\= clean
+
+current directory: /Users/Atsushi_Hasunuma/projects/rails-hotel-search-line-bot/vendor/bundle/ruby/3.1.0/gems/bootsnap-1.15.0/ext/bootsnap
+make DESTDIR\=
+compiling bootsnap.c
+linking shared-object bootsnap/bootsnap.bundle
+
+current directory: /Users/Atsushi_Hasunuma/projects/rails-hotel-search-line-bot/vendor/bundle/ruby/3.1.0/gems/bootsnap-1.15.0/ext/bootsnap
+make DESTDIR\= install
+/usr/bin/install -c -m 0755 bootsnap.bundle ./.gem.20221223-21475-w0ghfo/bootsnap

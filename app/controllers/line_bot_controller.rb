@@ -7,6 +7,7 @@ class LineBotController < ApplicationController
     unless client.validate_signature(body, signature)
       return head :bad_request
     end
+    events = client.parse_events_from(body)
   end
 
   private

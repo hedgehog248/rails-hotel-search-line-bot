@@ -50,14 +50,17 @@ class LineBotController < ApplicationController
     response = http_client.get(url, query)
     response = JSON.parse(response.body)
 
-    text = ''                             # 空文字を初期値にすることでString型の変数と判断させる
-    response['hotels'].each do |hotel|
-      text <<
-      hotel[0]['hotelBasicInfo']['hotelName'] + "\n" +
-      hotel[0]['hotelBasicInfo']['hotelInformationUrl'] + "\n" + 
-      "\n"
+    if response.key?('error')
+      text = "この検索条件に該当する宿泊施設が見つかりませんでした。\n条件を変えて再検索してください。"
+    else
+      text = ''                          # 空文字を初期値にすることでString型の変数と判断させる
+      response['hotels'].each do |hotel|
+        text <<
+        hotel[0]['hotelBasicInfo']['hotelName'] + "\n" +
+        hotel[0]['hotelBasicInfo']['hotelInformationUrl'] + "\n" + 
+        "\n"
+      end
     end
-
     message = {
       type: 'text',
       text: text

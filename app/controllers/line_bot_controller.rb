@@ -97,7 +97,7 @@ class LineBotController < ApplicationController
       aspectMode: 'cover',
       action: {
         type: "uri",
-        uri: "hotel['hotelInformationUrl"
+        uri: hotel['hotelInformationUrl']
       }
     }
   end
@@ -167,6 +167,41 @@ class LineBotController < ApplicationController
           ]
         }
       ]
+    }
+  end
+
+  def set_footer(hotel)
+    {
+      type: "box",
+      layout: "vertical",
+      spacing: "sm",
+      contents: [
+        {
+          type: "button",
+          style: "link",
+          height: "sm",
+          action: {
+            type: "uri",
+            label: "電話する",
+            uri: "tel:" + hotel['telephoneNo']
+          }
+        },
+        {
+          type: "button",
+          style: "link",
+          height: "sm",
+          action: {
+            type: "uri",
+            label: "地図を見る",
+            uri: 'https://www.google.com/maps?q=' + hotel['latitude'].to_s + ',' + hotel['longitude'].to_s
+          }
+        },
+        {
+          type: "spacer",
+          size: 'sm'
+        }
+      ],
+      flex: 0
     }
   end
 end
